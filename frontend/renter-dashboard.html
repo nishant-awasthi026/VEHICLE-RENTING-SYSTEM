@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -8,5 +8,82 @@
 <body>
   <h1>Renter Dashboard</h1>
   <a href="vehicle-search.html">Search Vehicles</a>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Renter Dashboard</title>
+</head>
+<body style="background-color: #f0f0f0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0;">
+  <div style="background-color: black; color: #FFD700; padding: 10px 20px; display: flex; justify-content: space-between; align-items: center;">
+    <h1 style="margin: 0; font-size: 24px;">Rento</h1>
+    <a href="index.html" style="color: #FFD700; text-decoration: none; font-size: 18px;">Logout</a>
+  </div>
+  <div style="max-width: 1200px; margin: 20px auto; padding: 0 20px;">
+    <h2 style="color: black; font-size: 28px; margin-bottom: 20px;">Welcome to your dashboard, Renter!</h2>
+    <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+      <div style="flex: 1; min-width: 250px; background-color: #f9f9f9; padding: 20px; border-radius: 5px; box-shadow: 0 0 5px rgba(0,0,0,0.1);">
+        <img src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8" style="width: 100%; height: 150px; object-fit: cover; border-radius: 5px; margin-bottom: 10px;" alt="Vehicle Search">
+        <h3 style="color: black; font-size: 20px; margin-bottom: 10px;">🔍 Search Vehicles</h3>
+        <p style="color: #333; font-size: 16px;">Find the perfect vehicle for your needs.</p>
+        <a href="vehicle-search.html" style="background-color: #FFD700; color: black; padding: 10px 20px; text-decoration: none; border-radius: 5px; display: inline-block; margin-top: 10px; font-size: 18px;" onmouseover="this.style.backgroundColor='#FFC700'" onmouseout="this.style.backgroundColor='#FFD700'">Search Now</a>
+      </div>
+      <div style="flex: 1; min-width: 250px; background-color: #f9f9f9; padding: 20px; border-radius: 5px; box-shadow: 0 0 5px rgba(0,0,0,0.1);">
+        <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a" style="width: 100%; height: 150px; object-fit: cover; border-radius: 5px; margin-bottom: 10px;" alt="Your Rentals">
+        <h3 style="color: black; font-size: 20px; margin-bottom: 10px;">🚗 Your Rentals</h3>
+        <p style="color: #333; font-size: 16px;">You have no upcoming rentals.</p>
+        <a href="rental-history.html" style="background-color: #FFD700; color: black; padding: 10px 20px; text-decoration: none; border-radius: 5px; display: inline-block; margin-top: 10px; font-size: 18px;" onmouseover="this.style.backgroundColor='#FFC700'" onmouseout="this.style.backgroundColor='#FFD700'">View Past Rentals</a>
+      </div>
+      <div style="flex: 1; min-width: 250px; background-color: #f9f9f9; padding: 20px; border-radius: 5px; box-shadow: 0 0 5px rgba(0,0,0,0.1);">
+        <img src="https://images.unsplash.com/photo-1511367461989-f85a21fda167" style="width: 100%; height: 150px; object-fit: cover; border-radius: 5px; margin-bottom: 10px;" alt="Profile Settings">
+        <h3 style="color: black; font-size: 20px; margin-bottom: 10px;">👤 Profile Settings</h3>
+        <p style="color: #333; font-size: 16px;">Update your personal information.</p>
+        <a href="register.html" style="background-color: #FFD700; color: black; padding: 10px 20px; text-decoration: none; border-radius: 5px; display: inline-block; margin-top: 10px; font-size: 18px;" onmouseover="this.style.backgroundColor='#FFC700'" onmouseout="this.style.backgroundColor='#FFD700'">Manage Profile</a>
+      </div>
+    </div>
+    <h2 style="color: black; font-size: 28px; margin: 40px 0 20px;">Featured Offers</h2>
+    <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+      <div style="flex: 1; min-width: 250px; background-color: #f9f9f9; padding: 20px; border-radius: 5px; box-shadow: 0 0 5px rgba(0,0,0,0.1);">
+        <img src="offer1.png" style="width: 100%; height: 400px; object-fit: contain; border-radius: 5px; margin-bottom: 10px;" alt="Sports Car Offer">
+        <h3 style="color: black; font-size: 18px; margin-bottom: 5px;">Sports Car Special</h3>
+        <p style="color: #333; font-size: 16px;">Rent a sleek sports car for only $99/day!</p>
+        <a href="vehicle-search.html" style="background-color: #FFD700; color: black; padding: 8px 16px; text-decoration: none; border-radius: 5px; display: inline-block; margin-top: 10px; font-size: 16px;" onmouseover="this.style.backgroundColor='#FFC700'" onmouseout="this.style.backgroundColor='#FFD700'">Book Now</a>
+      </div>
+      <div style="flex: 1; min-width: 250px; background-color: #f9f9f9; padding: 20px; border-radius: 5px; box-shadow: 0 0 5px rgba(0,0,0,0.1);">
+        <img src="offer2.png" style="width: 100%; height: 400px; object-fit: contain; border-radius: 5px; margin-bottom: 10px;" alt="SUV Offer">
+        <h3 style="color: black; font-size: 18px; margin-bottom: 5px;">Family SUV Deal</h3>
+        <p style="color: #333; font-size: 16px;">Spacious SUV for $75/day, perfect for trips.</p>
+        <a href="vehicle-search.html" style="background-color: #FFD700; color: black; padding: 8px 16px; text-decoration: none; border-radius: 5px; display: inline-block; margin-top: 10px; font-size: 16px;" onmouseover="this.style.backgroundColor='#FFC700'" onmouseout="this.style.backgroundColor='#FFD700'">Book Now</a>
+      </div>
+      <div style="flex: 1; min-width: 250px; background-color: #f9f9f9; padding: 20px; border-radius: 5px; box-shadow: 0 0 5px rgba(0,0,0,0.1);">
+        <img src="offer3.png" style="width: 100%; height: 400px; object-fit: contain; border-radius: 5px; margin-bottom: 10px;" alt="Luxury Car Offer">
+        <h3 style="color: black; font-size: 18px; margin-bottom: 5px;">Luxury Experience</h3>
+        <p style="color: #333; font-size: 16px;">Drive in style for $150/day.</p>
+        <a href="vehicle-search.html" style="background-color: #FFD700; color: black; padding: 8px 16px; text-decoration: none; border-radius: 5px; display: inline-block; margin-top: 10px; font-size: 16px;" onmouseover="this.style.backgroundColor='#FFC700'" onmouseout="this.style.backgroundColor='#FFD700'">Book Now</a>
+      </div>
+    </div>
+    <h2 style="color: black; font-size: 28px; margin: 40px 0 20px;">Vehicle Types</h2>
+    <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+      <div style="flex: 1; min-width: 250px; background-color: #f9f9f9; padding: 20px; border-radius: 5px; box-shadow: 0 0 5px rgba(0,0,0,0.1);">
+        <img src="https://th.bing.com/th/id/OIP.boxhtKBASgEgvM8kmdMdvAAAAA?rs=1&pid=ImgDetMain" style="width: 100%; height: 150px; object-fit: cover; border-radius: 5px; margin-bottom: 10px;" alt="SUV">
+        <h3 style="color: black; font-size: 18px; margin-bottom: 5px;">SUV</h3>
+        <p style="color: #333; font-size: 16px;">Spacious and versatile for any adventure.</p>
+      </div>
+      <div style="flex: 1; min-width: 250px; background-color: #f9f9f9; padding: 20px; border-radius: 5px; box-shadow: 0 0 5px rgba(0,0,0,0.1);">
+        <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7" style="width: 100%; height: 150px; object-fit: cover; border-radius: 5px; margin-bottom: 10px;" alt="Sedan">
+        <h3 style="color: black; font-size: 18px; margin-bottom: 5px;">Sedan</h3>
+        <p style="color: #333; font-size: 16px;">Comfortable and efficient for city driving.</p>
+      </div>
+      <div style="flex: 1; min-width: 250px; background-color: #f9f9f9; padding: 20px; border-radius: 5px; box-shadow: 0 0 5px rgba(0,0,0,0.1);">
+        <img src="https://th.bing.com/th/id/OIP.0ae41x9FNGmjaNxOy3KkVQHaE2?rs=1&pid=ImgDetMain" style="width: 100%; height: 150px; object-fit: cover; border-radius: 5px; margin-bottom: 10px;" alt="Truck">
+        <h3 style="color: black; font-size: 18px; margin-bottom: 5px;">Truck</h3>
+        <p style="color: #333; font-size: 16px;">Powerful for heavy-duty tasks.</p>
+      </div>
+    </div>
+  </div>
 </body>
 </html>

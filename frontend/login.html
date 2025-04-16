@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -14,6 +14,103 @@
     <input type="password" id="password" required><br>
     <button type="submit">Login</button>
   </form>
-  <script src="js/auth.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+    const loginForm = document.getElementById('loginForm');
+    const registerForm = document.getElementById('registerForm');
+  
+    if (loginForm) {
+      loginForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+        const response = await fetch('http://localhost:3000/users/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ username, password })
+        });
+        const data = await response.json();
+        if (response.ok) {
+          localStorage.setItem('token', data.token);
+          const decoded = JSON.parse(atob(data.token.split('.')[1])); // Decode JWT payload
+          window.location.href = decoded.role === 'Owner' ? 'owner-dashboard.html' : 'renter-dashboard.html';
+        } else {
+          alert(data.message);
+        }
+      });
+    }
+  
+    if (registerForm) {
+      registerForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+        const email = document.getElementById('email').value;
+        const phone = document.getElementById('phone').value;
+        const role = document.getElementById('role').value;
+        const response = await fetch('http://localhost:3000/users/register', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ username, password, email, phone, role })
+        });
+        const data = await response.json();
+        if (response.ok) {
+          window.location.href = 'login.html';
+        } else {
+          alert(data.error);
+        }
+      });
+    }
+  });
+  </script>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+</head>
+<body style="background-color: #f0f0f0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0;">
+  <div style="max-width: 400px; margin: 50px auto; background-color: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+    <h1 style="color: black; font-size: 36px; text-align: center; margin-bottom: 20px;">Rento</h1>
+    <form id="loginForm" style="text-align: left;">
+      <div style="margin-bottom: 15px;">
+        <label for="username" style="display: block; margin-bottom: 5px; font-size: 18px; color: #333;">Username:</label>
+        <input type="text" id="username" required style="width: 100%; padding: 10px; font-size: 16px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box;" placeholder="Enter your username">
+      </div>
+      <div style="margin-bottom: 15px;">
+        <label for="password" style="display: block; margin-bottom: 5px; font-size: 18px; color: #333;">Password:</label>
+        <input type="password" id="password" required style="width: 100%; padding: 10px; font-size: 16px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box;" placeholder="Enter your password">
+      </div>
+      <button type="submit" style="width: 100%; padding: 10px; font-size: 18px; background-color: #FFD700; color: black; border: none; border-radius: 5px; cursor: pointer;" onmouseover="this.style.backgroundColor='#FFC700'" onmouseout="this.style.backgroundColor='#FFD700'">Login</button>
+    </form>
+    <div id="errorMessage" style="color: red; text-align: center; margin-top: 10px;"></div>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const loginForm = document.getElementById('loginForm');
+      loginForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+        const response = await fetch('http://localhost:3000/users/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ username, password })
+        });
+        const data = await response.json();
+        if (response.ok) {
+          localStorage.setItem('token', data.token);
+          const decoded = JSON.parse(atob(data.token.split('.')[1]));
+          window.location.href = decoded.role === 'Owner' ? 'owner-dashboard.html' : 'renter-dashboard.html';
+        } else {
+          document.getElementById('errorMessage').innerText = data.message;
+        }
+      });
+    });
+  </script>
 </body>
 </html>
